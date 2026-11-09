@@ -1,0 +1,41 @@
+/* Тёмная тема. Включается кнопкой ◐ в правом нижнем углу, выбор запоминается. */
+#theme_toggle {
+    position: fixed; right: 10px; bottom: 10px; z-index: 1000;
+    width: 32px; height: 32px; padding: 0;
+    border: 1px solid #888; border-radius: 50%;
+    background: #fff; color: #000;
+    font: 18px/1 sans-serif; cursor: pointer; opacity: .55;
+}
+#theme_toggle:hover, #theme_toggle:focus { opacity: 1; }
+
+html[data-theme="dark"] { color-scheme: dark; }
+
+/* !important нужен: на редакторе цвет и фон заданы прямо в style у body */
+html[data-theme="dark"] body {
+    background-color: #14161a !important;
+    background-image: none !important;
+    color: #d9dbe0 !important;
+}
+/* тот же узор fon1.jpg, только тёмный и еле заметный */
+html[data-theme="dark"] body::before {
+    content: ""; position: fixed; top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -1; pointer-events: none;
+    background: url(fon1.jpg); filter: invert(1); opacity: .07;
+}
+
+html[data-theme="dark"] a:link { color: #8ab4ff; }
+html[data-theme="dark"] a:visited { color: #c6a2ff; }
+
+/* красные заголовки и подстановки из ссылки */
+html[data-theme="dark"] font[color="red" i],
+html[data-theme="dark"] [style*="color: red"] { color: #ff6e6e !important; }
+
+/* фигурка с гифкой прозрачная и чёрная: на тёмном фоне её переворачиваем */
+html[data-theme="dark"] #page_audio_button img { filter: invert(1); }
+
+html[data-theme="dark"] input[type="text"],
+html[data-theme="dark"] textarea {
+    background: #1d2026; color: #e6e8ec; border-color: #7a5555 !important;
+}
+
+html[data-theme="dark"] #theme_toggle { background: #23272e; color: #eee; border-color: #666; }

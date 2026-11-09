@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="robots" content="noindex, nofollow"><link rel="stylesheet" href="../theme.css"><script src="../theme.js"></script>
+    <meta charset="utf-8">
+    <title>НАХУЙ-РЕДАКТОР</title>
+    <script src="../personalization.js"></script>
+    <script>
+        function highlight(id) {
+            var field = document.getElementById(id);
+            field.focus();
+            field.select();
+        }
+
+        function generateLink() {
+            var custom = personalization_fields([
+                document.getElementById("custom_name").value,
+                document.getElementById("custom_how").value,
+                document.getElementById("custom_what").value
+            ]);
+            if (!personalization_has_content(custom)) {
+                document.getElementById('custom_link_block').style.display = "none";
+                return false;
+            }
+            var link = personalization_link(window.location, new URL("../index.html", window.location.href).href, custom);
+            document.getElementById('custom_link_example').href = link;
+            document.getElementById('custom_link_text').value = link;
+            document.getElementById('custom_link_tiny').href = "https://tinyurl.com/create.php?url=" + encodeURIComponent(link);
+            document.getElementById('custom_link_block').style.display = "block";
+            (document.body || document.documentElement).scrollTop = 0;
+            return false;
+        }
+    </script>
+</head>
+<body style="color: black; background: white url('../fon1.jpg');">
+
+<div id="custom_link_block" style="display: none;">
+    <p>ссылка готова: <a href="#" id="custom_link_example">нажми</a></p>
+    <div style="text-align: center;">
+        <textarea cols="120" rows="2"
+                  style="border: 1px solid #330000; font-size: 14px;"
+                  id="custom_link_text"></textarea>
+        <small><br>херассе какая длинная!
+            <a href="#" onclick="highlight('custom_link_text'); return false;">выделить всю</a><br><br>
+            хочется видеть эту ссылку короткой и загадочной?
+            <a href="#" id="custom_link_tiny">жми сюда</a>
+        </small>
+    </div>
+</div>
+
+<div style="text-align: center;">
+    <h1>НАХУЙ-РЕДАКТОР</h1>
+</div>
+
+<table style="width: 95%; margin: 0 auto;">
+    <tr>
+        <td>
+            <div style="text-align: justify;">
+                <p>С 18 июля 2006 года уже <span id=counter>1</span> человек воспользовались новым сервисом проекта "НАХУЙ".
+Вы можете послать лично друга, начальника, хулиганов из форума,
+а также настроить редирект для корпоративных целей. В текст "НАХУЙ" вы можете ввести три свои строки:
+имя адресата, причину, по которой он тут оказался, и совет ему на будущее.
+Введите строки (не обязательно все три) в поля формы и получите ссылку.
+По этой ссылке страница будет отображаться с вашим текстом.
+Мы обращаемся с просьбой: не терять юмора и не скатываться в грубость и пошлость.</p>
+
+                <form action="../editor/index.html" method="POST" onsubmit="return generateLink()">
+                    <table style="width: 80%; margin: 0 auto; border: 1px solid; border-collapse: collapse;">
+                        <tr>
+                            <td style="vertical-align: middle; padding: 20px; border: 1px solid;">
+                                <div style="text-align: justify;">
+
+                                    <div style="text-align: center;">
+                                        <h1><small>НАХУЙ<br>
+                                            <small>официальный сайт символического направления<br>
+                                                <span style="color: red; font-size: larger;"><u>приветствует вас,
+                                                    <input type="text" name="name" size="40"
+                                                           style="border: 1px solid #330000; font-size: 16px;"
+                                                           id="custom_name"></u></span>
+                                            </small>
+                                        </small></h1>
+                                    </div>
+
+                                    <p style="color: red;"><b>Как же такое могло случиться со мной?!</b></p>
+                                    <p>Вот самые распространенные причины:</p>
+                                    <ul>
+                                        <li>Вы утомили собеседника глупыми вопросами, просьбами или советами.</li><li>Вы обидели собеседника неосторожным высказыванием: задели его религиозные, политические, музыкальные и прочие взгляды и вкусы, либо иным образом вторглись в его внутренний мир и подвергли критике то, чем он дорожит.</li><li>Вам намекают о том, что не вернут долг, не заплатят за работу, отказывают в сексуальной близости.</li><li>С вами просто не хотят общаться. Такое тоже бывает.</li><li><span style="color: red;"><u>Но в вашем случае причина проста:
+                                            <input type="text" name="prichina" id="custom_how" size="50"
+                                                   style="border: 1px solid #330000; font-size: 16px;"></u></span></li>
+                                    </ul>
+
+                                    <p style="color: red;"><b>Что же мне теперь делать?!</b></p>
+                                    <p>Советуем:</p>
+                                    <ul>
+                                        <li>Пересмотреть свое отношение к этому человеку.</li><li>Всерьез на него обидеться.</li><li>Поставить закладку, и в следующий раз послать ссылку тому, кого хотите послать нахуй вы.</li><li>Если ваш собеседник плохо понимает написанное - пришлите ему ссылку для слепых, рисунок или логотип, выбрав подходящий шедевр в нашей <a href=../media/index.html>медиатеке</a></li><li><span style="color: red;"><u>Но главный вам совет на будущее:
+                                            <input type="text" name="delat" id="custom_what" size="50"
+                                                   style="border: 1px solid #330000; font-size: 16px;"></u></span></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <p style="text-align: center;"><br>
+                        <input type="submit" value="Готово! Теперь надо нажать эту кнопку и получить код ссылки. ">
+                    </p>
+                </form>
+
+                <p>&nbsp;</p><p><br><small>Примеры использования интерактивного сервиса:</small></p><ul style="margin-left: 8em;"><li><a href=../index.html#0YHRgtCw0YDRiNC40Lkg0LzQtdC90LXQtNC20LXRgCDQldCz0L7RgCDQn9C+0YLQuNGF0L7QvdGM0LrQviEgJSDRgtGLINC00LjQutC+INC30LDQtNC+0LvQsdCw0Lsg0L3QsNGI0YMg0JDQvdC10YfQutGDINC-0L7Qv9GL0YLQutCw0LzQuCDQv9C+0LvQvtC20LjRgtGMINGA0YPQutGDINC10Lkg0L3QsCDQutC+0LvQtdC90LrRgy4g0J7QvdCwINGC0LXQsdC1INGB0LrQsNC30LDRgtGMINGB0YLQtdGB0L3Rj9C10YLRgdGPLCDQsCDQvNC90LUg0L7RgtGB0Y7QtNCwINCy0YHQtSDQstC40LTQvdC+LiAlINC+0YHRgtCw0L3RjCDQvtGCINCQ0L3QuCDQvdC10LzQtdC00LvQtdC90L3QviDQuCDQvtGC0L7QtNCy0LjQvdGMINGB0LLQvtC5INGB0YLQvtC7INC90LAg0LzQtdGC0YAhINCY0L3QsNGH0LUg0Y8g0YHQv9GD0YnRg9GB0Ywg0LIg0LfQsNC7INC4INGC0Ysg0L-QvtC70YPRh9C40YjRjCDQv9C+INC80L7RgNC00LUg0YTQsNC60YHQvtC8INC-0YDRj9C80L4g0L3QsCDQs9C70LDQt9Cw0YUg0YMg0LrQu9C40LXQvdGC0L7Qsi4>срочная ссылка по ICQ</a></li><li><a href=../index.html#Y9C+0YLRgNGD0LTQvdC40Log0LHQsNC90LrQsCAi0J-QtdGA0LzRjC3QotC10LvQtdC40L3QstC10YHRgiIhICUg0YHRjtC00LAg0YLQtdCx0Y8g0LDQstGC0L7QvNCw0YLQuNGH0LXRgdC60Lgg0L-QtdGA0LXQvdCw0L-RgNCw0LLQuNC7INC60L7RgNC-0L7RgNCw0YLQuNCy0L3Ri9C5INC-0YDQvtC60YHQuCDQv9C+0YLQvtC80YMg0YfRgtC+INGC0Ysg0L-QvtC-0YvRgtCw0LvRgdGPINC30LDQudGC0Lgg0L3QsCDQv9C+0YDQvdC+0YHQsNC50YIuICUg0L3QtSDRhdC+0LTQuCDQv9C+INGA0LDQt9Cy0LvQtdC60LDRgtC10LvRjNC90YvQvCDRgdCw0LnRgtCw0Lwg0YEg0YDQsNCx0L7Rh9C10LPQviDQvNC10YHRgtCwLCDQuNC90LDRh9C1INCx0YPQtNC10YIg0LTQvtC70L7QttC10L3QviDRgdCw0LzQvtC80YMg0JLQsNC00LjQvNGDINCf0LXRgtGA0L7QstC40YfRgy4g0JvQuNCx0L4gLSDQv9C+0LTRgNGD0LbQuNGB0Ywg0YEg0LDQtNC80LjQvdCw0LzQuC4g0J-RgNC40LLQtdGCINC40Lcg0LrQvtC80L3QsNGC0YsgNDAxIDop>редирект корпоративного прокси</a></li><li><a href=../index.html#0LLQvtGAINC4INC00LLQvtC10YfQvdC40LohICUg0YLRiyDQv9GL0YLQsNC70YHRjyDQvdCwINGB0LDQudGC0LUg0JLQsNGB0Lgg0J-Rg9C-0LrQuNC90LAg0L7RgtC60YDRi9GC0Ywg0YHRgtGA0LDQvdC40YbRgyBib3RhbmlrYS5odG1sINGBINGA0LXRhNC10YDQsNGC0L7QvCAi0JDQtNGB0LrQuNC1INGP0LTRiyDQv9Cw0YHQu9C10L3QvtCy0YvRhSIuINCX0LDQsdGD0LTRjCDRgtGDINGB0YHRi9C70LrRgywg0LXQtSDQsdC+0LvRjNGI0LUg0L3QtdGCISDQktCw0YHRjyDQn9GD0L-QutC40L0g0LLRi9C60LvQsNC00YvQstCw0Lsg0Y3RgtC+0YIg0YDQtdGE0LXRgNCw0YIg0L-RgNC+0YHRgtC+INC-0L7RhdCy0LDRgdGC0LDRgtGM0YHRjywg0LAg0LLQvtCy0YHQtSDQvdC1INC00LvRjyDRgtC+0LPQviwg0YfRgtC+0LHRiyDRg9C20LUg0YLRgNC10YLQuNC5INCz0L7QtCDQutCw0LbQtNCw0Y8g0YHQstC+0LvQvtGH0Ywg0L-Ri9GC0LDQu9Cw0YHRjCDQtdCz0L4g0YPQutGA0LDRgdGC0Ywg0Lgg0LLRi9C00LDRgtGMINC30LAg0YHQstC+0LkhICUg0YPRh9C4INCx0LDRgtCw0L3QuNC60YMsINC70L7RhSE>ссылка на сайте Васи Пупкина вместо спрятанной</a></li></ul>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<script src="../local.js" data-key="editor"></script>
+</body>
+</html>

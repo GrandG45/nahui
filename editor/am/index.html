@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="robots" content="noindex, nofollow"><link rel="stylesheet" href="../../theme.css"><script src="../../theme.js"></script>
+    <meta charset="utf-8">
+    <title>ՍԻԿՏԻՐ ԽՄԲԱԳՐԻՉ</title>
+    <script src="../../personalization.js"></script>
+    <script>
+        function highlight(id) {
+            var field = document.getElementById(id);
+            field.focus();
+            field.select();
+        }
+
+        function generateLink() {
+            var custom = personalization_fields([
+                document.getElementById("custom_name").value,
+                document.getElementById("custom_how").value,
+                document.getElementById("custom_what").value
+            ]);
+            if (!personalization_has_content(custom)) {
+                document.getElementById('custom_link_block').style.display = "none";
+                return false;
+            }
+            var link = personalization_link(window.location, new URL("../../am/index.html", window.location.href).href, custom);
+            document.getElementById('custom_link_example').href = link;
+            document.getElementById('custom_link_text').value = link;
+            document.getElementById('custom_link_tiny').href = "https://tinyurl.com/create.php?url=" + encodeURIComponent(link);
+            document.getElementById('custom_link_block').style.display = "block";
+            (document.body || document.documentElement).scrollTop = 0;
+            return false;
+        }
+    </script>
+</head>
+<body style="color: black; background: white url('../../fon1.jpg');">
+
+<div id="custom_link_block" style="display: none;">
+    <p>ссылка готова: <a href="#" id="custom_link_example">нажми</a></p>
+    <div style="text-align: center;">
+        <textarea cols="120" rows="2"
+                  style="border: 1px solid #330000; font-size: 14px;"
+                  id="custom_link_text"></textarea>
+        <small><br>херассе какая длинная!
+            <a href="#" onclick="highlight('custom_link_text'); return false;">выделить всю</a><br><br>
+            хочется видеть эту ссылку короткой и загадочной?
+            <a href="#" id="custom_link_tiny">жми сюда</a>
+        </small>
+    </div>
+</div>
+
+<div style="text-align: center;">
+    <h1>ՍԻԿՏԻՐ ԽՄԲԱԳՐԻՉ</h1>
+</div>
+
+<table style="width: 95%; margin: 0 auto;">
+    <tr>
+        <td>
+            <div style="text-align: justify;">
+                <p>Դուք կարող եք սիկտիր անել անձամբ ընկերոջը, ղեկավարին, ֆորումից  խուլիգաններին, և ստեղծել ավտոմատ հղում կորպորատիվ նկատառումներով։ "ՍԻԿՏԻՐ"–ի տողերի մեջ դուք կարող եք ներմուծել երեք սեփական տող՝ հասցեատիրոջ անունը, այստեղ նրա հայտնվելու պատճառը, և ապագայի համար խորհուրդ նրան։ Ներմուծեք այդ տողերը և ստացեք հղումը։ Սայդ հղումով կայքը ցույց կտա ձեր տողերը։ Մենք խնդրում ենք՝ հումորի զգացումը չկոչցնել և չստորանալ մինչև կոպտություններ և անպատվումներ։ Արդեն <span id=counter>1</span> մարդ օգտվել է նոր սերվիսից։</p>
+
+                <form action="../../editor/am/index.html" method="POST" onsubmit="return generateLink()">
+                    <table style="width: 80%; margin: 0 auto; border: 1px solid; border-collapse: collapse;">
+                        <tr>
+                            <td style="vertical-align: middle; padding: 20px; border: 1px solid;">
+                                <div style="text-align: justify;">
+
+                                    <div style="text-align: center;">
+                                        <h1><small>ՍԻԿՏԻՐ<br>
+                                            <small>Սիմվոլիկ ուղղվածության պաշտոնական կայք<br>
+                                                <span style="color: red; font-size: larger;"><u>բարևվում է ձեզ,
+                                                    <input type="text" name="name" size="40"
+                                                           style="border: 1px solid #330000; font-size: 16px;"
+                                                           id="custom_name"></u></span>
+                                            </small>
+                                        </small></h1>
+                                    </div>
+
+                                    <p style="color: red;"><b>Ինչպե՞ս կարող էր այսպիսի բան պատահել ինձ հետ։</b></p>
+                                    <p>Ահա ամենատարածված պատճառները՝</p>
+                                    <ul>
+                                        <li>Դուք հոգնեցրել եք խոսակցին տեղի–անտեղի հարցերով, խնդրանքներով կամ խորհուրդներով։</li><li>Դուք նեղացրել եք խոսակցին անզգույշ արտահայտությամբ՝ կպել նրա կրոնական, երաժշտական և այլ տեսակետերին, կպել նրա խաթրին կամ մեկ այլ ձևով ներխուժել նրա ներքնաշխարհը և քննադատել այն, ինչ նրա համար թանկ է։</li><li>Ձեզ ակնարկում են, որ  չեն վերադարձնելու պարտքը, չեն տալու աշխատավարձը, մերժել են ձեր սեռական հարաբերությունների ակնկալիքները։</li><li>Ձեզ հետ ուղղակի չեն ուզում շփվել։ Այդպես էլ է պատահում։</li><li><span style="color: red;"><u>Բայց ձեր դեպքում պատճառը պարզ է՝
+                                            <input type="text" name="prichina" id="custom_how" size="50"
+                                                   style="border: 1px solid #330000; font-size: 16px;"></u></span></li>
+                                    </ul>
+
+                                    <p style="color: red;"><b>Բա ի՞նչ անեմ հիմա։</b></p>
+                                    <p>Խորհուրդ ենք տալիս.</p>
+                                    <ul>
+                                        <li>Վերանայել ձեր վերաբերմունքն այդ մարդու նկատմամբ։</li><li>Նեղանալ նրանից։</li><li>Գրանցել ինչ որ տեղ այս հղումը և մեկ այլ անգամ ուղարկել այն նրան, ում անձամբ դուք եք ուզում սիկտիր անել։</li><li><span style="color: red;"><u>Գլխավոր խորհուրդը ձեզ ապագայի համար՝
+                                            <input type="text" name="delat" id="custom_what" size="50"
+                                                   style="border: 1px solid #330000; font-size: 16px;"></u></span></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <p style="text-align: center;"><br>
+                        <input type="submit" value="Պատրաստ է։ Մնում է միայն սեղմել այս կոճակը և ստանալ հղումը։ ">
+                    </p>
+                </form>
+
+                
+            </div>
+        </td>
+    </tr>
+</table>
+
+<script src="../../local.js" data-key="editor"></script>
+</body>
+</html>

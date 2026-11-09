@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="robots" content="noindex, nofollow"><link rel="stylesheet" href="../../theme.css"><script src="../../theme.js"></script>
+    <meta charset="utf-8">
+    <title>НАХУЙ-РЕДАКТОР</title>
+    <script src="../../personalization.js"></script>
+    <script>
+        function highlight(id) {
+            var field = document.getElementById(id);
+            field.focus();
+            field.select();
+        }
+
+        function generateLink() {
+            var custom = personalization_fields([
+                document.getElementById("custom_name").value,
+                document.getElementById("custom_how").value,
+                document.getElementById("custom_what").value
+            ]);
+            if (!personalization_has_content(custom)) {
+                document.getElementById('custom_link_block').style.display = "none";
+                return false;
+            }
+            var link = personalization_link(window.location, new URL("../../UKR/index.html", window.location.href).href, custom);
+            document.getElementById('custom_link_example').href = link;
+            document.getElementById('custom_link_text').value = link;
+            document.getElementById('custom_link_tiny').href = "https://tinyurl.com/create.php?url=" + encodeURIComponent(link);
+            document.getElementById('custom_link_block').style.display = "block";
+            (document.body || document.documentElement).scrollTop = 0;
+            return false;
+        }
+    </script>
+</head>
+<body style="color: black; background: white url('../../fon1.jpg');">
+
+<div id="custom_link_block" style="display: none;">
+    <p>ссылка готова: <a href="#" id="custom_link_example">нажми</a></p>
+    <div style="text-align: center;">
+        <textarea cols="120" rows="2"
+                  style="border: 1px solid #330000; font-size: 14px;"
+                  id="custom_link_text"></textarea>
+        <small><br>херассе какая длинная!
+            <a href="#" onclick="highlight('custom_link_text'); return false;">выделить всю</a><br><br>
+            хочется видеть эту ссылку короткой и загадочной?
+            <a href="#" id="custom_link_tiny">жми сюда</a>
+        </small>
+    </div>
+</div>
+
+<div style="text-align: center;">
+    <h1>НАХУЙ-РЕДАКТОР</h1>
+</div>
+
+<table style="width: 95%; margin: 0 auto;">
+    <tr>
+        <td>
+            <div style="text-align: justify;">
+                <p>Ти можеш послати особисто друга,начальника,підарасів з форума,а ще ти можеш настроїти редирект для корпоративних напрямків. В текст "НАХУЙ" ти можеш ввести три свої строки: ім\'я адресата,причину,по якій він тут опинився,і порада йому на майбутнє. Введи строки (не обов\'язково три) в поля форми і получи ссилку. по цій ссилці сторінка буде відображатися з вашим текстом. Ми звертаємося з порадою: не теряти юмора і не опускатися до грубості.Уже count людей скористалося новим сервісом</p>
+
+                <form action="../../editor/UKR/index.html" method="POST" onsubmit="return generateLink()">
+                    <table style="width: 80%; margin: 0 auto; border: 1px solid; border-collapse: collapse;">
+                        <tr>
+                            <td style="vertical-align: middle; padding: 20px; border: 1px solid;">
+                                <div style="text-align: justify;">
+
+                                    <div style="text-align: center;">
+                                        <h1><small>НАХУЙ<br>
+                                            <small>це офіційний сайт символічного напрямку<br>
+                                                <span style="color: red; font-size: larger;"><u>Вітає вас,
+                                                    <input type="text" name="name" size="40"
+                                                           style="border: 1px solid #330000; font-size: 16px;"
+                                                           id="custom_name"></u></span>
+                                            </small>
+                                        </small></h1>
+                                    </div>
+
+                                    <p style="color: red;"><b>Як така хуйня мене найшла?!</b></p>
+                                    <p>Ось найпоширеніші причини:</p>
+                                    <ul>
+                                        <li>Ти уже заїбав співрозмовника дурними запитаннями,проханнями або порадами,або ще якоюсь їбатньою.</li><li>Ви відпиздили співрозмовника необережним рухом кулака: зачепили його релігійні,політичні,музичні,або ще якоюсь хуйньою,або іншим чином втрутились у його внутрішній світ і покритикували те, чим він дорожить.</li><li>Вам намікають на то,шо не вернут бабло яке у тебе брали,не заплатять за роботу,відмовляють у сексуальній близькості,або тупо не дадуть їбати.</li><li><span style="color: red;"><u>У твоєму виподку причина проста:
+                                            <input type="text" name="prichina" id="custom_how" size="50"
+                                                   style="border: 1px solid #330000; font-size: 16px;"></u></span></li>
+                                    </ul>
+
+                                    <p style="color: red;"><b>Ну і шо мені тепер робити?!</b></p>
+                                    <p>Радимо:</p>
+                                    <ul>
+                                        <li>Передивитися своє ставлення до цеї людини.</li><li>Дуже на нього образитися.(це подумати собі в голові: ВОТ ПІДАРАС)</li><li><span style="color: red;"><u>Але головна порада тобі на майбутнє:
+                                            <input type="text" name="delat" id="custom_what" size="50"
+                                                   style="border: 1px solid #330000; font-size: 16px;"></u></span></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <p style="text-align: center;"><br>
+                        <input type="submit" value="Всьо бля готово! Тепер потрібно нажати на цю кнопку і получити код ссилки ">
+                    </p>
+                </form>
+
+                
+            </div>
+        </td>
+    </tr>
+</table>
+
+<script src="../../local.js" data-key="editor"></script>
+</body>
+</html>

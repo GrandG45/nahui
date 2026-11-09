@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="robots" content="noindex, nofollow"><link rel="stylesheet" href="../../theme.css"><script src="../../theme.js"></script>
+    <meta charset="utf-8">
+    <title>REDACTOR - A TOMAR POR CULO</title>
+    <script src="../../personalization.js"></script>
+    <script>
+        function highlight(id) {
+            var field = document.getElementById(id);
+            field.focus();
+            field.select();
+        }
+
+        function generateLink() {
+            var custom = personalization_fields([
+                document.getElementById("custom_name").value,
+                document.getElementById("custom_how").value,
+                document.getElementById("custom_what").value
+            ]);
+            if (!personalization_has_content(custom)) {
+                document.getElementById('custom_link_block').style.display = "none";
+                return false;
+            }
+            var link = personalization_link(window.location, new URL("../../esp/index.html", window.location.href).href, custom);
+            document.getElementById('custom_link_example').href = link;
+            document.getElementById('custom_link_text').value = link;
+            document.getElementById('custom_link_tiny').href = "https://tinyurl.com/create.php?url=" + encodeURIComponent(link);
+            document.getElementById('custom_link_block').style.display = "block";
+            (document.body || document.documentElement).scrollTop = 0;
+            return false;
+        }
+    </script>
+</head>
+<body style="color: black; background: white url('../../fon1.jpg');">
+
+<div id="custom_link_block" style="display: none;">
+    <p>ссылка готова: <a href="#" id="custom_link_example">нажми</a></p>
+    <div style="text-align: center;">
+        <textarea cols="120" rows="2"
+                  style="border: 1px solid #330000; font-size: 14px;"
+                  id="custom_link_text"></textarea>
+        <small><br>херассе какая длинная!
+            <a href="#" onclick="highlight('custom_link_text'); return false;">выделить всю</a><br><br>
+            хочется видеть эту ссылку короткой и загадочной?
+            <a href="#" id="custom_link_tiny">жми сюда</a>
+        </small>
+    </div>
+</div>
+
+<div style="text-align: center;">
+    <h1>REDACTOR - A TOMAR POR CULO</h1>
+</div>
+
+<table style="width: 95%; margin: 0 auto;">
+    <tr>
+        <td>
+            <div style="text-align: justify;">
+                <p>Puede mandar a tomar por culo a un amigo, a un jefe, a los trolls del foro, etc. En el texto de A TOMAR POR CULO puede introducir 3 campos personales: nombre de su interlocutor, el motivo por el que ha aparecido aqui y algún consejo para el futuro. Inserte los datos (no tienen porque ser los tres) y reciba un enlace. Gracias a ese enlace, la página se cargará junto a su mensaje personal. Le pedimos un favor: no pierda el sentido de humor y no se pase con la brutalidad y la vulgaridad.  count personas han utilizado nuestro servicio.</p>
+
+                <form action="../../editor/esp/index.html" method="POST" onsubmit="return generateLink()">
+                    <table style="width: 80%; margin: 0 auto; border: 1px solid; border-collapse: collapse;">
+                        <tr>
+                            <td style="vertical-align: middle; padding: 20px; border: 1px solid;">
+                                <div style="text-align: justify;">
+
+                                    <div style="text-align: center;">
+                                        <h1><small>A TOMAR POR CULO<br>
+                                            <small>página oficial para redirección simbólica<br>
+                                                <span style="color: red; font-size: larger;"><u>le saluda,
+                                                    <input type="text" name="name" size="40"
+                                                           style="border: 1px solid #330000; font-size: 16px;"
+                                                           id="custom_name"></u></span>
+                                            </small>
+                                        </small></h1>
+                                    </div>
+
+                                    <p style="color: red;"><b>Como ha podido pasarme a mi?!</b></p>
+                                    <p>Estos son los motivos más frecuentes:</p>
+                                    <ul>
+                                        <li>Ha cansado a su interlocutor con sus estúpidas preguntas, peticiones o consejos.</li><li>Ha herido las creencias religiosas, opiniones políticas, musicales o demás de su interlocutor. O ha invadido su mundo interno para poner en duda su ideología de cualquier otra forma.</li><li>Le estan dando a entender que no le devolverán la deuda, no le pagarán el trabajo, no le permitirán acercamiento íntimo.</li><li>Simplemente no quieren relacionarse. A veces le ocurre a todo el mundo.</li><li><span style="color: red;"><u>Pero en su caso la razón es simple:
+                                            <input type="text" name="prichina" id="custom_how" size="50"
+                                                   style="border: 1px solid #330000; font-size: 16px;"></u></span></li>
+                                    </ul>
+
+                                    <p style="color: red;"><b>Y que hago ahora?</b></p>
+                                    <p>Aconsejamos:</p>
+                                    <ul>
+                                        <li>Revalorizar su relación con esta persona.</li><li>Enfadarse de verdad y para siempre y de paso intentar no respirar.</li><li>Poner la página en favoritos y a la próxima darle el enlace a aquel, a quien a su vez quiere mandarle a tomar por culo.</li><li><span style="color: red;"><u>Principal consejo para el futuro:
+                                            <input type="text" name="delat" id="custom_what" size="50"
+                                                   style="border: 1px solid #330000; font-size: 16px;"></u></span></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <p style="text-align: center;"><br>
+                        <input type="submit" value="Listo! Ahora hay que darle a este botón y recibir el enlace. ">
+                    </p>
+                </form>
+
+                
+            </div>
+        </td>
+    </tr>
+</table>
+
+<script src="../../local.js" data-key="editor"></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="robots" content="noindex, nofollow"><link rel="stylesheet" href="../../theme.css"><script src="../../theme.js"></script>
+    <meta charset="utf-8">
+    <title>[NAKHUY] - 편집자</title>
+    <script src="../../personalization.js"></script>
+    <script>
+        function highlight(id) {
+            var field = document.getElementById(id);
+            field.focus();
+            field.select();
+        }
+
+        function generateLink() {
+            var custom = personalization_fields([
+                document.getElementById("custom_name").value,
+                document.getElementById("custom_how").value,
+                document.getElementById("custom_what").value
+            ]);
+            if (!personalization_has_content(custom)) {
+                document.getElementById('custom_link_block').style.display = "none";
+                return false;
+            }
+            var link = personalization_link(window.location, new URL("../../kp/index.html", window.location.href).href, custom);
+            document.getElementById('custom_link_example').href = link;
+            document.getElementById('custom_link_text').value = link;
+            document.getElementById('custom_link_tiny').href = "https://tinyurl.com/create.php?url=" + encodeURIComponent(link);
+            document.getElementById('custom_link_block').style.display = "block";
+            (document.body || document.documentElement).scrollTop = 0;
+            return false;
+        }
+    </script>
+</head>
+<body style="color: black; background: white url('../../fon1.jpg');">
+
+<div id="custom_link_block" style="display: none;">
+    <p>ссылка готова: <a href="#" id="custom_link_example">нажми</a></p>
+    <div style="text-align: center;">
+        <textarea cols="120" rows="2"
+                  style="border: 1px solid #330000; font-size: 14px;"
+                  id="custom_link_text"></textarea>
+        <small><br>херассе какая длинная!
+            <a href="#" onclick="highlight('custom_link_text'); return false;">выделить всю</a><br><br>
+            хочется видеть эту ссылку короткой и загадочной?
+            <a href="#" id="custom_link_tiny">жми сюда</a>
+        </small>
+    </div>
+</div>
+
+<div style="text-align: center;">
+    <h1>[NAKHUY] - 편집자</h1>
+</div>
+
+<table style="width: 95%; margin: 0 auto;">
+    <tr>
+        <td>
+            <div style="text-align: justify;">
+                <p>당신은 개인으로 친구, 장, 공개토론에서 폭력배를 보낼 수 있고, 또한 기업 목표를 위해 [redirekt] 처분한다. [NAKHUY]" 당신의 원본으로 "당신의 3개의 선을 소개할 수 있다: 여기에서 인 것을 입증한, 미래에 그것에 수신인, 이유 및 회의의 이름. 당신이 참고를 얻을 모양의 분야로 선을 (강제적으로) 소개하십시오 모든 3. 이 참고에 따르면 페이지는 당신의 원본으로 반영될 것이다. 우리는 요구로 돈다: 유머를 잃지 않으며 위로 소밀과 평범으로 구르지 않기 위하여. 이미 남자의 count 는 새로운 서비스를 사용했다.</p>
+
+                <form action="../../editor/kp/index.html" method="POST" onsubmit="return generateLink()">
+                    <table style="width: 80%; margin: 0 auto; border: 1px solid; border-collapse: collapse;">
+                        <tr>
+                            <td style="vertical-align: middle; padding: 20px; border: 1px solid;">
+                                <div style="text-align: justify;">
+
+                                    <div style="text-align: center;">
+                                        <h1><small>[NAKHUY]<br>
+                                            <small>기호 방향의 공식적인 위치<br>
+                                                <span style="color: red; font-size: larger;"><u>당신이 그것에 의하여 인사한다,
+                                                    <input type="text" name="name" size="40"
+                                                           style="border: 1px solid #330000; font-size: 16px;"
+                                                           id="custom_name"></u></span>
+                                            </small>
+                                        </small></h1>
+                                    </div>
+
+                                    <p style="color: red;"><b>그런이 저의 일어나기 수 있기 때문에?!</b></p>
+                                    <p>여기에서 최대 장시간 이유는 이다:</p>
+                                    <ul>
+                                        <li>당신 미련한 질문, 요구 또는 회의 에의한 피로한 collocutor.</li><li>당신은 부주의한 계산서에 의하여 collocutor의 기분을 상하게 했다: 그것의 종교, 정치는, 뮤지컬 및 다른 전망 및 맛 붙잡거나, 다른 방법에서 그것의 내부 평화로 [vtorglis] 및 평가하는 방법 비판을 복종시켰다.</li><li>그들이 빚을 돌려보내지 않을 것이라는 점을 는을 사실에 관하여, 암시하는 당신 일을, 거절한다 성적인 근접을 지불하지 않을 것이다.</li><li>간단하게 그들은 당신 관련시키고 싶지 않다. 그런은 또한 이다.</li><li><span style="color: red;"><u>그러나 당신의 케이스에서 이유는 간단하다:
+                                            <input type="text" name="prichina" id="custom_how" size="50"
+                                                   style="border: 1px solid #330000; font-size: 16px;"></u></span></li>
+                                    </ul>
+
+                                    <p style="color: red;"><b>그러나, 지금 만들 것이다 저에게 저것?!</b></p>
+                                    <p>우리는 조언한다:</p>
+                                    <ul>
+                                        <li>그것의 관계를 이 사람에게 재시험하기 위하여.</li><li>에 진지하게 그것에 기분을 상하게 하십시오.</li><li>[nakhuy] 당신을 보내고 싶은 저것에 참고를 보내기 위하여 놓, 그리고 따르는 시간을 두기 위하여.</li><li><span style="color: red;"><u>그러나 당신에게 주요 것 미래에 회의:
+                                            <input type="text" name="delat" id="custom_what" size="50"
+                                                   style="border: 1px solid #330000; font-size: 16px;"></u></span></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <p style="text-align: center;"><br>
+                        <input type="submit" value="그것은 준비된다! 지금 이 단추를 가을걷이하고 참고의 부호를 얻는 것이 필수이. ">
+                    </p>
+                </form>
+
+                
+            </div>
+        </td>
+    </tr>
+</table>
+
+<script src="../../local.js" data-key="editor"></script>
+</body>
+</html>

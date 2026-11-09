@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="robots" content="noindex, nofollow"><link rel="stylesheet" href="../../theme.css"><script src="../../theme.js"></script>
+    <meta charset="utf-8">
+    <title>NAHUJ redaktorius</title>
+    <script src="../../personalization.js"></script>
+    <script>
+        function highlight(id) {
+            var field = document.getElementById(id);
+            field.focus();
+            field.select();
+        }
+
+        function generateLink() {
+            var custom = personalization_fields([
+                document.getElementById("custom_name").value,
+                document.getElementById("custom_how").value,
+                document.getElementById("custom_what").value
+            ]);
+            if (!personalization_has_content(custom)) {
+                document.getElementById('custom_link_block').style.display = "none";
+                return false;
+            }
+            var link = personalization_link(window.location, new URL("../../lt/index.html", window.location.href).href, custom);
+            document.getElementById('custom_link_example').href = link;
+            document.getElementById('custom_link_text').value = link;
+            document.getElementById('custom_link_tiny').href = "https://tinyurl.com/create.php?url=" + encodeURIComponent(link);
+            document.getElementById('custom_link_block').style.display = "block";
+            (document.body || document.documentElement).scrollTop = 0;
+            return false;
+        }
+    </script>
+</head>
+<body style="color: black; background: white url('../../fon1.jpg');">
+
+<div id="custom_link_block" style="display: none;">
+    <p>ссылка готова: <a href="#" id="custom_link_example">нажми</a></p>
+    <div style="text-align: center;">
+        <textarea cols="120" rows="2"
+                  style="border: 1px solid #330000; font-size: 14px;"
+                  id="custom_link_text"></textarea>
+        <small><br>херассе какая длинная!
+            <a href="#" onclick="highlight('custom_link_text'); return false;">выделить всю</a><br><br>
+            хочется видеть эту ссылку короткой и загадочной?
+            <a href="#" id="custom_link_tiny">жми сюда</a>
+        </small>
+    </div>
+</div>
+
+<div style="text-align: center;">
+    <h1>NAHUJ redaktorius</h1>
+</div>
+
+<table style="width: 95%; margin: 0 auto;">
+    <tr>
+        <td>
+            <div style="text-align: justify;">
+                <p>Jūs galite pasiusti draugą, viršininką, forumo chuliganus, o taip pat sukurti persiuntimą korporatyviniams tikslams. Į NAHUJ tekstą Jūs galite įvesti tris eilutes: gavėjo vardą, priežastį, dėl kurios jis yra siunčiamas čia ir patarimą jam ateičiai. Įveskite eilutes(nebūtina visas tris) į formos laukus ir gausite nuorodą. Paspaudus šią nuorodą puslapis bus su Jūsų parašytu tekstu. Mes prašome Jūsų: nepraraskite humoro jausmo ir nereikia grubumų ir gašlumų. Jau <span id=counter>1</span> žmonių pasinaudojo nauju servisu</p>
+
+                <form action="../../editor/lt/index.html" method="POST" onsubmit="return generateLink()">
+                    <table style="width: 80%; margin: 0 auto; border: 1px solid; border-collapse: collapse;">
+                        <tr>
+                            <td style="vertical-align: middle; padding: 20px; border: 1px solid;">
+                                <div style="text-align: justify;">
+
+                                    <div style="text-align: center;">
+                                        <h1><small>NAHUJ<br>
+                                            <small>Oficiali simbolinio judėjimo svetainė<br>
+                                                <span style="color: red; font-size: larger;"><u>sveikinasi su Jumis
+                                                    <input type="text" name="name" size="40"
+                                                           style="border: 1px solid #330000; font-size: 16px;"
+                                                           id="custom_name"></u></span>
+                                            </small>
+                                        </small></h1>
+                                    </div>
+
+                                    <p style="color: red;"><b>Kaip gi man tai galėjo atsitikti?</b></p>
+                                    <p>Štai keletas dažniausių priežasčių</p>
+                                    <ul>
+                                        <li>Nuo Jūsų kvailų klausimų, prašimų arba patarimų Jūsų pašnekovas tiesiog pavargo</li><li>Jūs įžeidėte savo pašnekovą neatsargiai pasakytu žodžiu: įžeidėte jo religinius, politinius, muzikinius arba kitus žvilgsnius, arba kitaip įsiterpėte į jo vidinį pasaulį ir pradėjote kritikuoti viską, ką jis brangina.</li><li>Jums bando pasakyti, kad negražins skolos, nesumokės už darbą, atsisako seksualinio artumo.</li><li>Su Jumis tiesiog nenori bendrauti. Taip irgi būna.</li><li><span style="color: red;"><u>Bet mūsų atveju priežastis paprasta:
+                                            <input type="text" name="prichina" id="custom_how" size="50"
+                                                   style="border: 1px solid #330000; font-size: 16px;"></u></span></li>
+                                    </ul>
+
+                                    <p style="color: red;"><b>Ką man dabar daryti?</b></p>
+                                    <p>Rekomenduojam:</p>
+                                    <ul>
+                                        <li>Peržiūrėti savo požiūrį šitam žmogui.</li><li>Rimtai įsižeisti ant jo.</li><li>Išsaugoti nuorodą ir kitą kartą pasiųsti ją tam, ką Jūs norite pasiusti nahuj.</li><li><span style="color: red;"><u>Bet pats svarbiausias patarimas ateičiai:
+                                            <input type="text" name="delat" id="custom_what" size="50"
+                                                   style="border: 1px solid #330000; font-size: 16px;"></u></span></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <p style="text-align: center;"><br>
+                        <input type="submit" value="Baigta! Dabar reikia paspausti šitą mygtuką ir gauti svetainės nuorodą. ">
+                    </p>
+                </form>
+
+                
+            </div>
+        </td>
+    </tr>
+</table>
+
+<script src="../../local.js" data-key="editor"></script>
+</body>
+</html>

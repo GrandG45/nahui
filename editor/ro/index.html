@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="robots" content="noindex, nofollow"><link rel="stylesheet" href="../../theme.css"><script src="../../theme.js"></script>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../../personalization.js"></script>
+    <script>
+        function highlight(id) {
+            var field = document.getElementById(id);
+            field.focus();
+            field.select();
+        }
+
+        function generateLink() {
+            var custom = personalization_fields([
+                document.getElementById("custom_name").value,
+                document.getElementById("custom_how").value,
+                document.getElementById("custom_what").value
+            ]);
+            if (!personalization_has_content(custom)) {
+                document.getElementById('custom_link_block').style.display = "none";
+                return false;
+            }
+            var link = personalization_link(window.location, new URL("../../ro/index.html", window.location.href).href, custom);
+            document.getElementById('custom_link_example').href = link;
+            document.getElementById('custom_link_text').value = link;
+            document.getElementById('custom_link_tiny').href = "https://tinyurl.com/create.php?url=" + encodeURIComponent(link);
+            document.getElementById('custom_link_block').style.display = "block";
+            (document.body || document.documentElement).scrollTop = 0;
+            return false;
+        }
+    </script>
+</head>
+<body style="color: black; background: white url('../../fon1.jpg');">
+
+<div id="custom_link_block" style="display: none;">
+    <p>ссылка готова: <a href="#" id="custom_link_example">нажми</a></p>
+    <div style="text-align: center;">
+        <textarea cols="120" rows="2"
+                  style="border: 1px solid #330000; font-size: 14px;"
+                  id="custom_link_text"></textarea>
+        <small><br>херассе какая длинная!
+            <a href="#" onclick="highlight('custom_link_text'); return false;">выделить всю</a><br><br>
+            хочется видеть эту ссылку короткой и загадочной?
+            <a href="#" id="custom_link_tiny">жми сюда</a>
+        </small>
+    </div>
+</div>
+
+<div style="text-align: center;">
+    <h1></h1>
+</div>
+
+<table style="width: 95%; margin: 0 auto;">
+    <tr>
+        <td>
+            <div style="text-align: justify;">
+                <p></p>
+
+                <form action="../../editor/ro/index.html" method="POST" onsubmit="return generateLink()">
+                    <table style="width: 80%; margin: 0 auto; border: 1px solid; border-collapse: collapse;">
+                        <tr>
+                            <td style="vertical-align: middle; padding: 20px; border: 1px solid;">
+                                <div style="text-align: justify;">
+
+                                    <div style="text-align: center;">
+                                        <h1><small>INPULA<br>
+                                            <small>Site-ul oficial de indreptare simbolica<br>
+                                                <span style="color: red; font-size: larger;"><u>Va saluta,  
+                                                    <input type="text" name="name" size="40"
+                                                           style="border: 1px solid #330000; font-size: 16px;"
+                                                           id="custom_name"></u></span>
+                                            </small>
+                                        </small></h1>
+                                    </div>
+
+                                    <p style="color: red;"><b>Cum de mi sa intamplat tocmai mie</b></p>
+                                    <p>Iata cele mai raspandite motive:</p>
+                                    <ul>
+                                        <li>Ati plictisit interlocutorul cu tot tipul de intrebari prostesti, cereri sau sfaturi.</li><li>Ati suparat interlocutorul printr-o expunere brutala a gandurilor, i-ati atins convingerile religioase, muzicale, politice si alte convingeri sau intr-o oarecare masura ati dat buzna in lumea sa launtrica la care tine mult.</li><li>Vi se da de inteles ca nu vi se va rambursa o datorie, nu veti fi plati pentru munca prestata, refuz in contact sexual</li><li>Pur si simplu nu se doreste sa se discute cu Dumneavoastra. Si asta se poate intampla.</li><li><span style="color: red;"><u>Dar in cazul Dumneavoastra cauza e simpla
+                                            <input type="text" name="prichina" id="custom_how" size="50"
+                                                   style="border: 1px solid #330000; font-size: 16px;"></u></span></li>
+                                    </ul>
+
+                                    <p style="color: red;"><b>Ce sa fac acum?</b></p>
+                                    <p>Sfatuim:</p>
+                                    <ul>
+                                        <li>Sa revizuiti atarnarea fata de acea persoana</li><li>Sa va suparati serios pe ea</li><li>Sa adaugati pagina in favoriti si data viitoare sa trimiteti link-ul persoanei pe care vreti s-o trimteti INPULA</li><li><span style="color: red;"><u>Iata un sfat important pentru Dumenavaostra pe viitor
+                                            <input type="text" name="delat" id="custom_what" size="50"
+                                                   style="border: 1px solid #330000; font-size: 16px;"></u></span></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <p style="text-align: center;"><br>
+                        <input type="submit" value=" ">
+                    </p>
+                </form>
+
+                
+            </div>
+        </td>
+    </tr>
+</table>
+
+<script src="../../local.js" data-key="editor"></script>
+</body>
+</html>

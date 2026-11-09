@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="robots" content="noindex, nofollow"><link rel="stylesheet" href="../../theme.css"><script src="../../theme.js"></script>
+    <meta charset="utf-8">
+    <title>НА КУРАЦ-УРЕДНИК</title>
+    <script src="../../personalization.js"></script>
+    <script>
+        function highlight(id) {
+            var field = document.getElementById(id);
+            field.focus();
+            field.select();
+        }
+
+        function generateLink() {
+            var custom = personalization_fields([
+                document.getElementById("custom_name").value,
+                document.getElementById("custom_how").value,
+                document.getElementById("custom_what").value
+            ]);
+            if (!personalization_has_content(custom)) {
+                document.getElementById('custom_link_block').style.display = "none";
+                return false;
+            }
+            var link = personalization_link(window.location, new URL("../../yu/index.html", window.location.href).href, custom);
+            document.getElementById('custom_link_example').href = link;
+            document.getElementById('custom_link_text').value = link;
+            document.getElementById('custom_link_tiny').href = "https://tinyurl.com/create.php?url=" + encodeURIComponent(link);
+            document.getElementById('custom_link_block').style.display = "block";
+            (document.body || document.documentElement).scrollTop = 0;
+            return false;
+        }
+    </script>
+</head>
+<body style="color: black; background: white url('../../fon1.jpg');">
+
+<div id="custom_link_block" style="display: none;">
+    <p>ссылка готова: <a href="#" id="custom_link_example">нажми</a></p>
+    <div style="text-align: center;">
+        <textarea cols="120" rows="2"
+                  style="border: 1px solid #330000; font-size: 14px;"
+                  id="custom_link_text"></textarea>
+        <small><br>херассе какая длинная!
+            <a href="#" onclick="highlight('custom_link_text'); return false;">выделить всю</a><br><br>
+            хочется видеть эту ссылку короткой и загадочной?
+            <a href="#" id="custom_link_tiny">жми сюда</a>
+        </small>
+    </div>
+</div>
+
+<div style="text-align: center;">
+    <h1>НА КУРАЦ-УРЕДНИК</h1>
+</div>
+
+<table style="width: 95%; margin: 0 auto;">
+    <tr>
+        <td>
+            <div style="text-align: justify;">
+                <p>Можете да пошаљете лични пријатељ, газда, хулигана из форума и поставити за преусмеравање корпоративне сврхе. У тексту "НА КУРАЦ" можете да унесете три својим редовима: име примаоца, разлог због којег је он био овде, па његов савет за будућност. Унесите ниска (не мора све три) у облику поља и добити везу. Ова веза ће бити приказана страница са текстом. Ми питамо: да не губе хумор и не пада на грубост и вулгарност. Већ $count број људи користи од овог новог сервиса.</p>
+
+                <form action="../../editor/yu/index.html" method="POST" onsubmit="return generateLink()">
+                    <table style="width: 80%; margin: 0 auto; border: 1px solid; border-collapse: collapse;">
+                        <tr>
+                            <td style="vertical-align: middle; padding: 20px; border: 1px solid;">
+                                <div style="text-align: justify;">
+
+                                    <div style="text-align: center;">
+                                        <h1><small>НА КУРАЦ<br>
+                                            <small>Званични сајт симболичког смера<br>
+                                                <span style="color: red; font-size: larger;"><u>Поздравља вас
+                                                    <input type="text" name="name" size="40"
+                                                           style="border: 1px solid #330000; font-size: 16px;"
+                                                           id="custom_name"></u></span>
+                                            </small>
+                                        </small></h1>
+                                    </div>
+
+                                    <p style="color: red;"><b>Како се ово могло десити за мене?</b></p>
+                                    <p>Ево најчешћих разлога:</p>
+                                    <ul>
+                                        <li>Ви сте уморни саговорника глупих питања, захтеве или савет.</li><li>Ви повредити вашег партнера разговор речима: забавна његове верске, политичке, музичке и друге ставове и укуса, или на други начин прекршено његово унутрашњи свет и критиковао оно што он негује.</li><li>Неко предлаже да они не врате дуг није плаћен за посао, одбију сексуалне интимности.</li><li>Пошто не желите да комуницирате. Ово се такође дешава.</li><li><span style="color: red;"><u>Али у вашем случају Разлог је једноставан:
+                                            <input type="text" name="prichina" id="custom_how" size="50"
+                                                   style="border: 1px solid #330000; font-size: 16px;"></u></span></li>
+                                    </ul>
+
+                                    <p style="color: red;"><b>Шта да радим сада?</b></p>
+                                    <p>Препоручујемо:</p>
+                                    <ul>
+                                        <li>• Ревидирати свој однос према овом човеку.</li><li>• Озбиљно је увредио на њега.</li><li>• Пошаљи картицу, и следећи пут пошаљу линк ка онај који желите да пошаљете да вам курац.</li><li>• Ако је ваш саговорник не разуме написано - пошаљите му линк за слепе, слику или лого, одабиром одговарајућих ремек-дело у нашој библиотеци</li><li><span style="color: red;"><u>Али главни савет за вас у будућности:
+                                            <input type="text" name="delat" id="custom_what" size="50"
+                                                   style="border: 1px solid #330000; font-size: 16px;"></u></span></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <p style="text-align: center;"><br>
+                        <input type="submit" value="Урађено! Сада морамо притисните ово дугме и добијете линкове кода. ">
+                    </p>
+                </form>
+
+                
+            </div>
+        </td>
+    </tr>
+</table>
+
+<script src="../../local.js" data-key="editor"></script>
+</body>
+</html>
